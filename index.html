@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	 
+	<title>Routines Goals</title>
+	<link rel="stylesheet" href="IndexStyle.css">
+	
+</head>
+<body>
+<header>
+    <div class="logo">
+      <h1>Routine Goals</h1>
+    </div>
+    
+    <div class="search-box">
+      <input type="text" placeholder="Buscar">
+     <button class="search-button">
+        <span class="search-icon"></span>
+      
+    </button>
+    </div>
+    
+    <nav>
+      <ul>
+        <li><a href="">Crear cuenta</a></li>
+        <li><a href="GNInfo.html">Acerca de</a></li>
+        <li><a href="">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <div class="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item">
+                <img src="crossfit.jpg" alt="Imagen 1">
+            </div>
+            <div class="carousel-item">
+                <img src="calistenia.jpg" alt="Imagen 2">
+            </div>
+            <div class="carousel-item">
+                <img src="gym.jpg" alt="Imagen 3">
+            </div>
+            <div class="carousel-item">
+                <img src="powerlifting.jpg" alt="Imagen 4">
+            </div>
+            <div class="carousel-item">
+                <img src="hiit.jpg" alt="Imagen 5">
+            </div>
+            <div class="carousel-item">
+                <img src="yoga.jpg" alt="Imagen 6">
+            </div>
+            <div class="carousel-item">
+                <img src="zumba.jpg" alt="Imagen 7">
+            </div>
+            <div class="carousel-item">
+                <img src="cardio.jpg" alt="Imagen 8">
+            </div>
+            
+             <div class="carousel-item">
+                <img src="boxing.jpg" alt="Imagen 9">
+            </div>
+            
+          
+            
+        </div>
+    </div>
+    
+    
+    
+
+  <script>
+        // Mueve el carrusel una imagen a la derecha
+        function moveCarousel() {
+            var carouselInner = document.querySelector('.carousel-inner');
+            var firstItem = carouselInner.firstElementChild;
+            carouselInner.style.transform = 'translateX(calc(-100% / 10.6))';
+            carouselInner.addEventListener('transitionend', function() {
+                carouselInner.appendChild(firstItem);
+                carouselInner.style.transition = 'none';
+                carouselInner.style.transform = 'translateX(0)';
+                setTimeout(function() {
+                    carouselInner.style.transition = 'transform 1s ease-in-out';
+                }, 50);
+            });
+        }
+
+        // Configura el intervalo de movimiento
+        var interval = setInterval(moveCarousel, 5000);
+
+        // Detiene el movimiento cuando el mouse está sobre el carrusel
+        var carousel = document.querySelector('.carousel');
+        carousel.addEventListener('mouseenter', function() {
+            clearInterval(interval);
+        });
+
+        // Reanuda el movimiento cuando el mouse sale del carrusel
+        carousel.addEventListener('mouseleave', function() {
+            interval = setInterval(moveCarousel, 5000);
+        });
+    </script>
+    
+    
+    
+    <div class="sectionSelect">
+        <h2>Selección de opciones</h2>
+        <label for="option1">Intensidad:</label>
+        <select id="intensidad-select">
+           
+        </select>
+
+        <label for="option2">Duracion:</label>
+        <select id="duracion-select">
+            
+        </select>
+        
+      <label for="option3">Objetivo:</label>
+        <select id="objetivo-select">
+            
+        </select>
+        
+        <label for="option4">Estilo:</label>
+        <select id="estilo-select">
+            
+        </select>
+        
+
+        <button type="button" class="btn btn-primary form-control" id="btn_workouta" >Buscar Entrenamiento</button>
+							
+    </div>
+    
+    <div id="div-listados-ejercicios" class="card-container">
+                 		            
+                        
+                    </div>
+      
+<!-- Bootstrap core JavaScript-->
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="vendor/jquery/jquery.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/chart-area-demo.js"></script>
+    <script src="js/demo/chart-pie-demo.js"></script>
+
+
+</body>
+</html>
